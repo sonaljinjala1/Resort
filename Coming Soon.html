@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Resort</title>
+
+
+  <!--favicon-->
+  <link rel="shortcut icon" href="assets/img/pixelcut-export (4).png" type="image/x-icon" style="border-radius: 50%;">
+
+  <!--fonts-->
+  <link rel="stylesheet" href="assets/css/fonts.css">
+
+  <!--fonts awesome-icon-all.min -->
+  <link rel="stylesheet" href="assets/css/all.min.css">
+
+  <!--bootstrap-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+  <!--css-->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg  " style="padding: 0;">
+      <div class="container">
+        <a class="navbar-brand" href="#" style="transform: translateY(60px); z-index: 99999; position: absolute;">
+          <img src="assets/img/logo.png" alt="" width="100px" style="object-fit: cover; padding-top: 0;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#header-menu"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav" style="transform: translateY(60px); z-index: 99999; position: absolute;">
+
+            <div class="row  row-cols-1  justify-content-bettwen justify-content-center "
+              style="background-color: transparent;">
+              <div class="menu">
+                <ul class="d-flex ">
+
+                  <li>
+                    <a href="index.html">Home </a>
+
+                  </li>
+                  <li>
+                    <a href="about.html">About us </a>
+
+                  </li>
+
+
+                  <li>
+                    <a href="#">rooms<i class="fa-solid fa-angle-down"></i> </a>
+                    <div class="drop-down">
+                      <ol>
+                        <li>
+                          <a href="rooms.html">rooms </a>
+                        </li>
+                        <li>
+                          <a href="rooms details.html">rooms details</a>
+                        </li>
+                      </ol>
+                    </div>
+                  </li>
+
+
+
+
+
+                  <li>
+                    <a href="Accommodation.html">Accommodation </a>
+
+                  </li>
+
+
+                  <li>
+                    <a href="#">Pages <i class="fa-solid fa-angle-down"></i></a>
+                    <div class="drop-down">
+                      <ol>
+                        <li>
+                          <a href="Packages.html">Packages</a>
+                        </li>
+                        <li>
+                          <a href="Facilities.html">Facilities</a>
+                        </li>
+                        <li>
+                          <a href="Booking.html">Booking </a>
+                        </li>
+                        <li>
+                          <a href="Gallery.html">Gallery </a>
+                        </li>
+                        <li>
+                          <a href="faqs.html">FAQs</a>
+                        </li>
+                       
+
+                        <li>
+                          <a href="Coming Soon.html">Coming Soon </a>
+                        </li>
+                       
+
+                      </ol>
+                    </div>
+                  </li>
+
+                  <li>
+                    <a href="Blog.html">Blog  </a>
+                   
+
+                  </li>
+                  <li>
+                    <a href="Contact Us.html">Contact Us </a>
+
+                  </li>
+
+
+
+                </ul>
+
+
+              </div>
+
+
+              </li>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="banner12 justify-content-center">
+    <h1 class="text-center text-white"
+      style="font-size: 65px;  transform: translatey(230px ); font-weight: 500; font-family: 'Playfair Display'; text-transform: uppercase;">Coming Soon
+    </h1>
+
+
+    <div id="countdown" style="transform:  translateY( 300px);">
+      <ul class="d-flex  text-center  text-white">
+        <li style="font-size: 30px;"><span id="days" style="font-size: 90px; padding: 40px; padding-left: 370px;"></span><h1 style="padding-left: 320px;">days</h1></li>
+        <li style="font-size:30px ;"><span id="hours" style="font-size: 90px; padding: 40px;"></span><h1>hours</h1></li>
+        <li style="font-size: 30px;"><span id="minutes" style="font-size: 90px; padding: 70px;"></span><h1>minutes</h1></li>
+        <li style="font-size: 30px;"><span id="seconds" style="font-size: 90px; padding: 60px;"></span><h1>Seconds</h1></li>
+      </ul>
+    </div>
+   
+  </div>
+
+
+
+ 
+  
+     
+     
+       
+
+
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script>
+    (function () {
+  const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+  //I'm adding this section so I don't have to keep updating this pen every year :-)
+  //remove this if you don't need it
+  let today = new Date(),
+      dd = String(today.getDate()).padStart(2, "0"),
+      mm = String(today.getMonth() + 1).padStart(2, "0"),
+      yyyy = today.getFullYear(),
+      nextYear = yyyy + 1,
+      dayMonth = "09/30/",
+      birthday = dayMonth + yyyy;
+  
+  today = mm + "/" + dd + "/" + yyyy;
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+  
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
+
+        const now = new Date().getTime(),
+              distance = countDown - now;
+
+        document.getElementById("days").innerText = Math.floor(distance / (day)),
+          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());
+   </script>-->
+
+
+   </body>
+   </html>
